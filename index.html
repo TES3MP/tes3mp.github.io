@@ -76,7 +76,10 @@
 <h2>
 <a id="stats" class="anchor" href="#stats" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server Stats</h2>
 
-<div id="graphdiv3" style="width:720px; height:180px;"></div>
+<table><tr>
+<td style="border:none"><div id="graphdiv3" style="width:680px; height:180px;"></div></td>
+<td style="border:none"><div id="graphlabeldiv" style="font-size:0.8em;"></div></td>
+</tr></table>
 
       <footer class="site-footer">
 
@@ -90,10 +93,12 @@
   <script type="text/javascript">
     g3 = new Dygraph(
       document.getElementById("graphdiv3"),
-      "https://grimkriegor.zalkeen.us/tes3mp-stats/stats.csv",
+      "https://tes3mp.zalkeen.us/stats/stats.csv",
       {
         labels: ['Date', 'Servers', 'Players'],
         legend: 'always',
+        labelsSeparateLines: 'true',
+        labelsDiv: 'graphlabeldiv',
         fractions: false,
         fillGraph: true,
         digitsAfterDecimal: 0
