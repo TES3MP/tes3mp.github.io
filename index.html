@@ -87,10 +87,14 @@
       </footer>
 
     </section>
-  
+
   </body>
 
   <script type="text/javascript">
+    var current_unix_time = (new Date).getTime();
+    var date_window_min = current_unix_time-1209600000 //Current UTC time minus two weeks
+    var date_window_max = current_unix_time+3600000 //Current UTC time plus one hour for padding
+
     g3 = new Dygraph(
       document.getElementById("graphdiv3"),
       "https://tes3mp.zalkeen.us/stats/stats.csv",
@@ -101,9 +105,12 @@
         labelsDiv: 'graphlabeldiv',
         fractions: false,
         fillGraph: true,
+	showRangeSelector: true,
+	rangeSelectorHeight: 25,
+	dateWindow: [date_window_min, date_window_max],
         digitsAfterDecimal: 0
       }
     );
-  </script>
 
+  </script>
 </html>
